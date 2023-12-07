@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  mecatron:
+    container_name: mecatron
+    restart: always
+    build:
+      context: .
+    ports:
+      - 8000:8000
+    networks:
+      - observability-network
+
+networks:
+  observability-network:
+    driver: bridge 
+    name: observability-network

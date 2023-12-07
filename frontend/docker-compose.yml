@@ -1,32 +1,18 @@
 version: '3.7'
 services:
-  mecatron:
-    container_name: mecatron
-    restart: always
-    build:
-      context: .
-    ports:
-      - 8000:8000
-
   grafana:
     image: grafana/grafana
     container_name: grafana
     ports:
       - 3000:3000
     volumes:
-      # - ./grafana/datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml
-      # - grafana_storage:/var/lib/grafana
       - ./etc/grafana/:/etc/grafana/provisioning/datasources
       - ./etc/dashboards.yml:/etc/grafana/provisioning/dashboards/dashboards.yaml
       - ./etc/dashboards:/etc/grafana/dashboards
     depends_on:
       - prometheus
-
-  node-exporter:
-    image: prom/node-exporter
-    container_name: node-exporter
-    ports:
-      - "9100:9100"
+    networks:
+      - observability-network
 
   prometheus:
     image: prom/prometheus
@@ -38,12 +24,21 @@ services:
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.retention.time=7d'
+    networks:
+      - observability-network
 
   pushgateway:
     image: prom/pushgateway
     container_name: pushgateway
     ports:
       - 9091:9091
+    networks:
+      - observability-network
 
 volumes:
   grafana_storage:
+
+networks:
+  observability-network:
+    driver: bridge 
+    name: observability-network
