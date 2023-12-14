@@ -7,6 +7,11 @@ O projeto de integração com mecatrônica tem ênfase na importância e valor q
 - ### Projeto garrafa d´água
     - O projeto propõe o desenvolvimento de uma garrafa d'água inteligente, equipada com uma célula de carga que constantemente envia dados de peso por meio de requisições HTTP para uma API dedicada. Ao acessar o link da aplicação frontend, o usuário terá à sua disposição um dashboard interativo e em tempo real, atrelado a isso temos uma capacidade de envio de alertas constantes, proporcionando uma experiência dinâmica e informativa sobre o consumo de água.
 
+- ### Link do vídeo
+  ```
+    https://photos.onedrive.com/share/380CFDB30803ED05!3395?cid=380CFDB30803ED05&resId=380CFDB30803ED05!3395&authkey=!APmgWv4s12oulmw&ithint=video
+  ```
+
 ## Funcionalidade da API
 Receber as solicitações HTTP provenientes do ESP32 e encaminhar as métricas para a biblioteca Prometheus representa uma integração eficiente. A biblioteca Prometheus, por sua vez, oferece um banco de dados dedicado para o armazenamento desses dados, proporcionando uma solução robusta e organizada.
 
