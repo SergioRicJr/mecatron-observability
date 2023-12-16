@@ -157,6 +157,11 @@ Para acessar o dashboard e ter acesso às visualizações dos dados, é necessá
 
 Uma ferramenta incrível projetada para incentivar a ingestão de água, permitindo aos usuários acompanhar seu consumo diário e configurar lembretes para se manterem hidratados.
 
+### Projeto separado
+  ```
+    https://github.com/lucasgearhead/Water-App-Mobile
+  ```
+
 ### Tecnologias Utilizadas
 
 - React Native
@@ -168,14 +173,19 @@ Antes de começar, certifique-se de ter o Node.js e o npm instalados em sua máq
 
 ### Instalação
 
-#### 1. Clone o Repositório
+#### 1. Instale o CLI
+```bash
+npm install -g react-native-cli
+```
+
+#### 2. Clone o Repositório
 
 ```bash
 git clone https://github.com/lucasgearhead/Water-App-Mobile.git
 cd Water-App-Mobile
 ```
 
-#### 2. Instale as Dependências
+#### 3. Instale as Dependências
 
 ```bash
 npm install
